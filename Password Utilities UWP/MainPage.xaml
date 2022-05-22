@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="Password_Utilities_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Password_Utilities_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView Loaded="NavigationView_Loaded" SelectionChanged="NavigationView_SelectionChanged" IsBackButtonVisible="Collapsed">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Admin" Content="Check Password Security" Tag="PG1"></NavigationViewItem>
+                <NavigationViewItem Icon="Document" Content="Generate Password" Tag="PG2"></NavigationViewItem>
+            </NavigationView.MenuItems>
+
+            <ScrollViewer>
+                <Frame x:Name="ContenFrame"/>
+            </ScrollViewer>
+        </NavigationView>
+    </Grid>
+</Page>

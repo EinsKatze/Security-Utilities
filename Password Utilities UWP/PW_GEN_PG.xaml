@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Password_Utilities_UWP.PW_GEN_PG"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Password_Utilities_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ToggleSwitch x:Name="SPECIAL_CHARS_TOGGLE" FlowDirection="LeftToRight" VerticalAlignment="Top" IsOn="True" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="24" Width="195" OffContent="Special Chars" OnContent="Special Chars"/>
+        <Button Content="Generate" Height="69" Width="145" HorizontalAlignment="Center" ClickMode="Press" FontSize="20" Margin="0,140,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <Slider x:Name="PW_LEN_SLIDER" HorizontalAlignment="Center" Margin="0,80,0,0" VerticalAlignment="Top" Width="194" Maximum="128" Minimum="16" Value="32" Header="Length:"/>
+        <TextBox x:Name="PW_RESULT" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Result Here" VerticalAlignment="Top" Background="Black" Foreground="White" Height="200" Width="425" FontFamily="Lucida Console" FontSize="14" RequestedTheme="Default" IsReadOnly="True" MaxWidth="500" MaxHeight="500" FocusVisualSecondaryBrush="White" BorderBrush="White" Margin="0,280,0,0"></TextBox>
+        <Button Content="Copy to Clipboard" Margin="0,225,0,0" VerticalAlignment="Top" FontSize="8" Background="Transparent" HorizontalAlignment="Center" Height="30" Width="106" BorderBrush="White" BorderThickness="1,1,1,1" Click="Button_Click_1"/>
+    </Grid>
+</Page>
