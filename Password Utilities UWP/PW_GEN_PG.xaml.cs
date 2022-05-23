@@ -14,7 +14,7 @@ using Microsoft.Toolkit.Uwp.Notifications;
 namespace Password_Utilities_UWP
 {
     /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
+    /// This page is used to generate a password and copy it to your Clipboard.
     /// </summary>
     public sealed partial class PW_GEN_PG : Page
     {
@@ -22,6 +22,14 @@ namespace Password_Utilities_UWP
         {
             this.InitializeComponent();
         }
+        /// <summary>
+        /// This Method generates a CRYPTOGRAPHICALLY SAFE string
+        /// </summary>
+        /// <param name="length">Length of the String</param>
+        /// <param name="characterSet">Characters the String can contain</param>
+        /// <returns>Cryptographically safe string</returns>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public static string GetRandomString(int length, IEnumerable<char> characterSet)
         {
             if (length < 0)
@@ -44,7 +52,11 @@ namespace Password_Utilities_UWP
             }
             return new string(result);
         }
-
+        /// <summary>
+        /// Generates a password and puts it into the Textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             IEnumerable<char> charSet;
@@ -60,7 +72,11 @@ namespace Password_Utilities_UWP
             var pw = GetRandomString((int)PW_LEN_SLIDER.Value, charSet);
             PW_RESULT.Text = pw;
         }
-
+        /// <summary>
+        /// Copies the password to your clipboard and sends an notification that is has been copied to your clipboard.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var clipboardPW = new DataPackage();

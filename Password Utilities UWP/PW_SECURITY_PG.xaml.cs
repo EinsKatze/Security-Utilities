@@ -1,38 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text.RegularExpressions;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Text.RegularExpressions;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
 namespace Password_Utilities_UWP
 {
     /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
+    /// This Page is the Page used for checking the Security of your password
     /// </summary>
     public sealed partial class PW_SECURITY_PG : Page
     {
         public PW_SECURITY_PG()
         {
-            this.InitializeComponent();
+            this.InitializeComponent(); //Normal initizalization
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e) //Button Click
         {
-            string pw = PW_INPUT.Password;
-            var _rating = CheckingPasswordStrength(pw);
-            RATING_LBL.Text = "Security Rating: " + _rating;
+            string pw = PW_INPUT.Password; //Get Password from Input field
+            var _rating = CheckingPasswordStrength(pw); //Get Rating
+            RATING_LBL.Text = "Security Rating: " + _rating; //Set Text to Rating
         }
 
         enum PasswordScore
@@ -54,15 +40,15 @@ namespace Password_Utilities_UWP
             if (password.Length < 8)
                 return PasswordScore.VeryWeak;
 
-            if (password.Length >= 12)
+            if (password.Length >= 12) //Length Check
                 score++;
-            if (password.Length >= 16)
+            if (password.Length >= 16) //Length Check
                 score++;
-            if (Regex.IsMatch(password, @"[0-9]+(\.[0-9][0-9]?)?", RegexOptions.ECMAScript))   //number only //"^\d+$" if you need to match more than one digit.
+            if (Regex.IsMatch(password, @"[0-9]+(\.[0-9][0-9]?)?", RegexOptions.ECMAScript))   //Number check
                 score++;
-            if (Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z]).+$", RegexOptions.ECMAScript)) //both, lower and upper case
+            if (Regex.IsMatch(password, @"^(?=.*[a-z])(?=.*[A-Z]).+$", RegexOptions.ECMAScript)) //Lower and Upper case check
                 score++;
-            if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript)) //^[A-Z]+$
+            if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript)) //Special Character Check - some are still missing
                 score++;
             return (PasswordScore)score;
         }
