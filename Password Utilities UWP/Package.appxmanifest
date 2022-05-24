@@ -8,8 +8,8 @@
 
   <Identity
     Name="a3b7bc31-1f51-44ff-a317-31d56d9fc38b"
-    Publisher="CN=einskatze"
-    Version="0.0.2.0" />
+    Publisher="CN=TEST_BUILD_CERT"
+    Version="0.0.3.0" />
 
   <mp:PhoneIdentity PhoneProductId="a3b7bc31-1f51-44ff-a317-31d56d9fc38b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

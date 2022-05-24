@@ -3,11 +3,11 @@
 **Password Utilities** is a *universal Windows Platform* Application which gives u some cool password tools for your day.
 
 ## Installation
-Currently there is no way to install the app unless you compile it yourself.
+Execute the following command from the base directory:
 
-Which is ([see issue #1](https://github.com/EinsKatze/Password-Utilities/issues/1)) not possible at the moment.
+`MSBuild '.\Password Utilities UWP.sln' /p:Configuration=Release /p:Platform=x64`
 
-Repository updates multiple times a day so this should be fixed by tomorrow or the day after.
+*Note this command only builds for the x64 Windows Platform*
 
 ## Contributing (is very appreciated)
 Pull requests are very welcome. Please create a Issue for your PR first.
