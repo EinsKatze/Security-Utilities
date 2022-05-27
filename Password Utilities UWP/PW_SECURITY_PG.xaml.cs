@@ -18,13 +18,13 @@ namespace Password_Utilities_UWP
         {
             string pw = PW_INPUT.Password; //Get Password from Input field
             var _rating = CheckingPasswordStrength(pw); //Get Rating
-            RATING_LBL.Text = "Security Rating: " + _rating; //Set Text to Rating
+            RATING_LBL.Text = "Security Rating: " + _rating.ToString().Replace("_", " "); //Set Text to Rating && removing the underscore from the var name
         }
         // This Enum declares the Values of how strong a password can be
         enum PasswordScore
         {
             Blank = 0,
-            VeryWeak = 1,
+            Very_Weak = 1,
             Weak = 2,
             Medium = 3,
             Strong = 4,
@@ -38,7 +38,7 @@ namespace Password_Utilities_UWP
             if (password.Length < 1) // Length Check
                 return PasswordScore.Blank;
             if (password.Length < 8) // Length Check
-                return PasswordScore.VeryWeak;
+                return PasswordScore.Very_Weak;
 
             if (password.Length >= 12) // Length Check
                 score++;

@@ -8,6 +8,7 @@ using Windows.UI.Xaml.Controls;
 using System.Windows;
 using Windows.ApplicationModel.DataTransfer;
 using Microsoft.Toolkit.Uwp.Notifications;
+using System.Text.RegularExpressions;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -60,13 +61,18 @@ namespace Password_Utilities_UWP
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             IEnumerable<char> charSet; // New Charset to declare what chars should be used in the password generating process
-            charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";            
             if (SPECIAL_CHARS_TOGGLE.IsOn) // Check if the user wants special characters
             {
-                charSet = "abcdefghijklmopqrstuvwxyzöäüABCDEFGHIJKLMOPQRSTUVWXYZÖÄÜ,;.:-_#'+*~´`ß?\\0=}9)]8([7/{6&5%4$3§2\"1!^°<>|@€"; // Add SpecialChars to the Characterselection
+                charSet += "öäüÖÄÜ,;.:-_#'+*~´`ß?\\=})]([/{&%$§\"!^°<>|@€"; // Add SpecialChars to the Characterselection
+            }
+            if (NUMBER_TOGGLE.IsOn) // Check if the user wants numbers in the password
+            {
+                charSet += "1234567890"; // Add numbers to the Charselection
             }
             var pw = GetRandomString((int)PW_LEN_SLIDER.Value, charSet); // Generate the password and assign it to "pw"
             PW_RESULT.Text = pw; // Put the password into the TextBox
+            
         }
         /// <summary>
         /// Copies the password to your clipboard and sends an notification that is has been copied to your clipboard.
