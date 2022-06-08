@@ -50,6 +50,9 @@ namespace Password_Utilities_UWP
                     case "PG2":
                         ContenFrame.Navigate(typeof(PW_GEN_PG));
                         break;
+                    case "PG3":
+                        ContenFrame.Navigate(typeof(ENCRYPTION_DECRYPTION_PG));
+                        break;
                 }
             }
         }
