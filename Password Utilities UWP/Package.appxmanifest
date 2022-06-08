@@ -32,7 +32,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="Password_Utilities_UWP.App">
       <uap:VisualElements
-        DisplayName="Password Utilities UWP"
+        DisplayName="Password Utilities"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Password Utilities UWP"
@@ -42,8 +42,4 @@
       </uap:VisualElements>
     </Application>
   </Applications>
-
-  <Capabilities>
-    <Capability Name="internetClient" />
-  </Capabilities>
 </Package>
