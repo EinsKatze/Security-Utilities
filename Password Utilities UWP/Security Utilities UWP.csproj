@@ -7,8 +7,8 @@
     <ProjectGuid>{4F4A7E8C-CD89-45F4-B4F3-55768FC66A3D}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Password_Utilities_UWP</RootNamespace>
-    <AssemblyName>Password Utilities UWP</AssemblyName>
+    <RootNamespace>Security_Utilities_UWP</RootNamespace>
+    <AssemblyName>Security Utilities</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.19041.0</TargetPlatformVersion>

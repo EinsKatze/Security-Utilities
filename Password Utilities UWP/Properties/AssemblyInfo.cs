@@ -6,13 +6,13 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("Password Utilities")]
-[assembly: AssemblyDescription("Some cool password tools for your day!")]
+[assembly: AssemblyTitle("Security Utility Tool")]
+[assembly: AssemblyDescription("Some cool security tools for your day!")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Password Utilities UWP")]
+[assembly: AssemblyProduct("Security Utilities UWP")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("EinsKatze")]
 [assembly: AssemblyCulture("")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:

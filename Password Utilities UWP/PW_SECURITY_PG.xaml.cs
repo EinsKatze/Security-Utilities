@@ -2,7 +2,7 @@
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
-namespace Password_Utilities_UWP
+namespace Security_Utilities_UWP
 {
     /// <summary>
     /// This Page is the Page used for checking the Security of your password

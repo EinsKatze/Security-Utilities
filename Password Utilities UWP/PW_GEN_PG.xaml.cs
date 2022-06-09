@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
-namespace Password_Utilities_UWP
+namespace Security_Utilities_UWP
 {
     /// <summary>
     /// This page is used to generate a password and copy it to your Clipboard.
