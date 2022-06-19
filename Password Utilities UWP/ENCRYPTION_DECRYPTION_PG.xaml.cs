@@ -66,7 +66,7 @@ namespace Security_Utilities_UWP
                 {
                     symmetricKey.BlockSize = 128;
                     symmetricKey.Mode = CipherMode.CBC;
-                    symmetricKey.Padding = PaddingMode.PKCS7;
+                    symmetricKey.Padding = PaddingMode.Zeros;
                     using (var encryptor = symmetricKey.CreateEncryptor(keyBytes, ivStringBytes))
                     {
                         using (var memoryStream = new MemoryStream())
@@ -95,6 +95,7 @@ namespace Security_Utilities_UWP
             {
                 return "";
             }
+            
             // Get the complete stream of bytes that represent:
             // [32 bytes of Salt] + [32 bytes of IV] + [n bytes of CipherText]
             var cipherTextBytesWithSaltAndIv = Convert.FromBase64String(cipherText);
@@ -111,7 +112,7 @@ namespace Security_Utilities_UWP
                 {
                     symmetricKey.BlockSize = 128;
                     symmetricKey.Mode = CipherMode.CBC;
-                    symmetricKey.Padding = PaddingMode.PKCS7;
+                    symmetricKey.Padding = PaddingMode.Zeros;
                     using (var decryptor = symmetricKey.CreateDecryptor(keyBytes, ivStringBytes))
                     {
                         using (var memoryStream = new MemoryStream(cipherTextBytes))
