@@ -15,8 +15,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
-
 namespace Security_Utilities_UWP
 {
     /// <summary>
@@ -66,7 +64,7 @@ namespace Security_Utilities_UWP
                 {
                     symmetricKey.BlockSize = 128;
                     symmetricKey.Mode = CipherMode.CBC;
-                    symmetricKey.Padding = PaddingMode.Zeros;
+                    symmetricKey.Padding = PaddingMode.PKCS7;
                     using (var encryptor = symmetricKey.CreateEncryptor(keyBytes, ivStringBytes))
                     {
                         using (var memoryStream = new MemoryStream())
@@ -80,7 +78,7 @@ namespace Security_Utilities_UWP
                                 cipherTextBytes = cipherTextBytes.Concat(ivStringBytes).ToArray();
                                 cipherTextBytes = cipherTextBytes.Concat(memoryStream.ToArray()).ToArray();
                                 memoryStream.Close();
-                                cryptoStream.Close();
+                                //cryptoStream.Close();
                                 return Convert.ToBase64String(cipherTextBytes);
                             }
                         }
@@ -112,7 +110,7 @@ namespace Security_Utilities_UWP
                 {
                     symmetricKey.BlockSize = 128;
                     symmetricKey.Mode = CipherMode.CBC;
-                    symmetricKey.Padding = PaddingMode.Zeros;
+                    symmetricKey.Padding = PaddingMode.PKCS7;
                     using (var decryptor = symmetricKey.CreateDecryptor(keyBytes, ivStringBytes))
                     {
                         using (var memoryStream = new MemoryStream(cipherTextBytes))
