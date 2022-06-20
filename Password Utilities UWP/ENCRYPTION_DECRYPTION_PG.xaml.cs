@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using System.Text;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace Security_Utilities_UWP
 {
@@ -140,6 +133,13 @@ namespace Security_Utilities_UWP
                 rngCsp.GetBytes(randomBytes);
             }
             return randomBytes;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var clipboardPW = new DataPackage(); // New Datapackage Variable because Clipboard.SetContent needs a DataPackage Input
+            clipboardPW.SetText(OUTPUT.Text); // Set the Value of the DataPackage Variable to the Password
+            Clipboard.SetContent(clipboardPW); // Actually Copy the Value of the Variable to the Clipboard.
         }
     }
 }

@@ -5,10 +5,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using System.Windows;
 using Windows.ApplicationModel.DataTransfer;
-using Microsoft.Toolkit.Uwp.Notifications;
-using System.Text.RegularExpressions;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
 
@@ -84,10 +81,6 @@ namespace Security_Utilities_UWP
             var clipboardPW = new DataPackage(); // New Datapackage Variable because Clipboard.SetContent needs a DataPackage Input
             clipboardPW.SetText(PW_RESULT.Text); // Set the Value of the DataPackage Variable to the Password
             Clipboard.SetContent(clipboardPW); // Actually Copy the Value of the Variable to the Clipboard.
-            new ToastContentBuilder() // New Notifiation
-            .AddText("Copied Clipboard!") //Setting "Header" Text of Notification
-            .AddText("Successfully copied the password to your Clipboard!") //Setting "Body" Text of Notification
-            .Show(); //Show the Notification
         }
     }
 }
