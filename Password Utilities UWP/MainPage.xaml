@@ -17,7 +17,7 @@
             </NavigationView.MenuItems>
 
             <ScrollViewer>
-                <Frame x:Name="ContenFrame"/>
+                <Frame x:Name="ContentFrame"/>
             </ScrollViewer>
         </NavigationView>
     </Grid>

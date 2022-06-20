@@ -1,0 +1,15 @@
+﻿<Page
+    x:Class="Security_Utilities_UWP.SETTINGS_PG"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Security_Utilities_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBox x:Name="VERSION_TXT" HorizontalAlignment="Right" Margin="0,0,20,20" TextWrapping="Wrap" Text="Version: x.x.x.x" VerticalAlignment="Bottom" FontSize="20" IsReadOnly="True" FontFamily="Lucida Console" BorderBrush="Transparent" AllowFocusOnInteraction="False" ManipulationMode="None" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsHitTestVisible="False" IsTabStop="False" IsTextPredictionEnabled="False"/>
+
+    </Grid>
+</Page>

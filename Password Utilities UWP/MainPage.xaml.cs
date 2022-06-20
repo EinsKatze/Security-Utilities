@@ -29,14 +29,14 @@ namespace Security_Utilities_UWP
 
         private void NavigationView_Loaded(object sender, RoutedEventArgs e)
         {
-            ContenFrame.Navigate(typeof(PW_SECURITY_PG));
+            ContentFrame.Navigate(typeof(PW_SECURITY_PG));
         }
 
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             if (args.IsSettingsSelected)
             {
-                //Settings Page
+                ContentFrame.Navigate(typeof(SETTINGS_PG));
             }
             else
             {
@@ -45,13 +45,13 @@ namespace Security_Utilities_UWP
                 switch (item.Tag.ToString())
                 {
                     case "PG1":
-                        ContenFrame.Navigate(typeof(PW_SECURITY_PG));
+                        ContentFrame.Navigate(typeof(PW_SECURITY_PG));
                         break;
                     case "PG2":
-                        ContenFrame.Navigate(typeof(PW_GEN_PG));
+                        ContentFrame.Navigate(typeof(PW_GEN_PG));
                         break;
                     case "PG3":
-                        ContenFrame.Navigate(typeof(ENCRYPTION_DECRYPTION_PG));
+                        ContentFrame.Navigate(typeof(ENCRYPTION_DECRYPTION_PG));
                         break;
                 }
             }
