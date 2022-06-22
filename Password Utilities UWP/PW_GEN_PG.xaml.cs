@@ -61,7 +61,7 @@ namespace Security_Utilities_UWP
             charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";            
             if (SPECIAL_CHARS_TOGGLE.IsOn) // Check if the user wants special characters
             {
-                charSet += "öäüÖÄÜ,;.:-_#'+*~´`ß?\\=})]([/{&%$§\"!^°<>|@€"; // Add SpecialChars to the Characterselection
+                charSet += "öäüÖÄÜ,.:-_#+*~ß?=/&%$§!@€"; // Add SpecialChars to the Characterselection
             }
             if (NUMBER_TOGGLE.IsOn) // Check if the user wants numbers in the password
             {
