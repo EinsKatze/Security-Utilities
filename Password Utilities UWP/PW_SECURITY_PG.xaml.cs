@@ -14,12 +14,6 @@ namespace Security_Utilities_UWP
             this.InitializeComponent(); //Normal initizalization
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) //Button Click
-        {
-            string pw = PW_INPUT.Password; //Get Password from Input field
-            var _rating = CheckingPasswordStrength(pw); //Get Rating
-            RATING_LBL.Text = "Security Rating: " + _rating.ToString().Replace("_", " "); //Set Text to Rating && removing the underscore from the var name
-        }
         // This Enum declares the Values of how strong a password can be
         enum PasswordScore
         {
@@ -32,7 +26,7 @@ namespace Security_Utilities_UWP
             OMEGA_STRONG = 6
         }
 
-        private static PasswordScore CheckingPasswordStrength(string password)
+        private static PasswordScore CheckPasswordStrength(string password)
         {
             int score = 1;
             if (password.Length < 1) // Length Check
@@ -51,6 +45,11 @@ namespace Security_Utilities_UWP
             if (Regex.IsMatch(password, @"[!,@,#,$,%,^,&,*,?,_,~,-,£,(,)]", RegexOptions.ECMAScript)) // Special Character Check - some are still missing
                 score++;
             return (PasswordScore)score;
+        }
+
+        private void PW_INPUT_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            RATING_LBL.Text = "Security Rating: " + CheckPasswordStrength(PW_INPUT.Password).ToString().Replace("_", " ");
         }
     }
 }

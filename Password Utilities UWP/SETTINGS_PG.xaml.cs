@@ -1,4 +1,5 @@
-﻿using Windows.ApplicationModel;
+﻿using System;
+using Windows.ApplicationModel;
 using Windows.UI.Xaml.Controls;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=234238 dokumentiert.
@@ -17,6 +18,11 @@ namespace Security_Utilities_UWP
             PackageId packageId = package.Id;
             PackageVersion version = packageId.Version;
             VERSION_TXT.Text = string.Format("Build: v{0}.{1}.{2}.{3}", version.Major, version.Minor, version.Build, version.Revision);
+        }
+
+        private async void GitHub_BTN_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            var success = await Windows.System.Launcher.LaunchUriAsync(new Uri("https://github.com/EinsKatze/Security-Utilities"));
         }
     }
 }
