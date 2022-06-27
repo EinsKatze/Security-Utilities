@@ -9,7 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBox x:Name="VERSION_TXT" HorizontalAlignment="Right" Margin="0,0,20,20" TextWrapping="Wrap" Text="Version: x.x.x.x" VerticalAlignment="Bottom" FontSize="20" IsReadOnly="True" FontFamily="Lucida Console" BorderBrush="Transparent" AllowFocusOnInteraction="False" ManipulationMode="None" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsHitTestVisible="False" IsTabStop="False" IsTextPredictionEnabled="False"/>
+        <TextBox x:Name="VERSION_TXT" HorizontalAlignment="Right" Margin="0,0,20,70" TextWrapping="Wrap" Text="Version: x.x.x.x" VerticalAlignment="Bottom" FontSize="20" IsReadOnly="True" FontFamily="Lucida Console" BorderBrush="Transparent" AllowFocusOnInteraction="False" ManipulationMode="None" IsTapEnabled="False" IsRightTapEnabled="False" IsHoldingEnabled="False" IsDoubleTapEnabled="False" IsHitTestVisible="False" IsTabStop="False" IsTextPredictionEnabled="False"/>
+        <AppBarButton x:Name="GitHub_BTN" Icon="Go" Label="GitHub" Click="GitHub_BTN_Click" BorderBrush="White" FontSize="20" Width="214" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20"/>
+
 
     </Grid>
 </Page>

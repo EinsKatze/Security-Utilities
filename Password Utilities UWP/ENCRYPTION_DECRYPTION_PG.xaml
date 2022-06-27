@@ -37,7 +37,7 @@
             </ToolTip.BorderBrush>
         </ToolTip>
         <TextBox x:Name="OUTPUT" HorizontalAlignment="Center" TextWrapping="Wrap" PlaceholderText="Output will be here" VerticalAlignment="Top" Background="#FF333333" Width="499" Height="202" Margin="0,540,0,0" IsReadOnly="True" FontSize="12" Padding="5,3,5,3"/>
-        <Button Content="Copy to Clipboard" Margin="380,500,0,0" VerticalAlignment="Top" FontSize="12" Background="Transparent" Height="30" Width="120" BorderBrush="White" BorderThickness="1,1,1,1" Click="Button_Click_1" ToolTipService.ToolTip="Copies the text below to your clipboard" HorizontalAlignment="Center"/>
+        <Button Content="Copy to Clipboard" Margin="380,500,0,0" VerticalAlignment="Top" FontSize="12" Background="Transparent" Height="30" Width="120" BorderBrush="White" BorderThickness="1,1,1,1" Click="CopyToClipboardBtn_Click" ToolTipService.ToolTip="Copies the text below to your clipboard" HorizontalAlignment="Center"/>
 
     </Grid>
 </Page>

@@ -9,16 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView Loaded="NavigationView_Loaded" SelectionChanged="NavigationView_SelectionChanged" IsBackButtonVisible="Collapsed">
+        <ScrollViewer>
+            <Frame x:Name="ContentFrame"/>
+        </ScrollViewer>
+        
+        <NavigationView Loaded="NavigationView_Loaded" SelectionChanged="NavigationView_SelectionChanged" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsBackButtonVisible="Collapsed" Width="1500" HorizontalAlignment="Left">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Admin" Content="Check Password Security" Tag="PG1"></NavigationViewItem>
                 <NavigationViewItem Icon="Document" Content="Generate Password" Tag="PG2"></NavigationViewItem>
                 <NavigationViewItem Icon="Document" Content="En/Decrypt Text" Tag="PG3"></NavigationViewItem>
             </NavigationView.MenuItems>
-
-            <ScrollViewer>
-                <Frame x:Name="ContentFrame"/>
-            </ScrollViewer>
         </NavigationView>
     </Grid>
 </Page>

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.Cryptography;
 using System.Text;
 using Windows.ApplicationModel.DataTransfer;
@@ -10,9 +8,6 @@ using Windows.UI.Xaml.Controls;
 
 namespace Security_Utilities_UWP
 {
-    /// <summary>
-    /// Eine leere Seite, die eigenständig verwendet oder zu der innerhalb eines Rahmens navigiert werden kann.
-    /// </summary>
     public sealed partial class ENCRYPTION_DECRYPTION_PG : Page
     {
         public ENCRYPTION_DECRYPTION_PG()
@@ -28,11 +23,11 @@ namespace Security_Utilities_UWP
             
             if(item == "Encrypt")
             {
-                OUTPUT.Text = Encrypt(computeThis, key);
+                OUTPUT.Text = EncryptString(computeThis, key);
             }
             if(item == "Decrypt")
             {
-                OUTPUT.Text = Decrypt(computeThis, key);
+                OUTPUT.Text = DecryptString(computeThis, key);
             }
         }
 
@@ -43,7 +38,7 @@ namespace Security_Utilities_UWP
         // This constant determines the number of iterations for the password bytes generation function.
         private const int DerivationIterations = 1000;
 
-        public static string Encrypt(string clearText, string Key)
+        public static string EncryptString(string clearText, string Key)
         {
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
             using (Aes encryptor = Aes.Create())
@@ -65,7 +60,7 @@ namespace Security_Utilities_UWP
             return clearText;
         }
 
-        public static string Decrypt(string cipherText, string Key)
+        public static string DecryptString(string cipherText, string Key)
         {
             byte[] IV = Convert.FromBase64String(cipherText.Substring(0, 20));
             cipherText = cipherText.Substring(20).Replace(" ", "+");
@@ -108,7 +103,7 @@ namespace Security_Utilities_UWP
             return randomBytes;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void CopyToClipboardBtn_Click(object sender, RoutedEventArgs e)
         {
             var clipboardPW = new DataPackage(); // New Datapackage Variable because Clipboard.SetContent needs a DataPackage Input
             clipboardPW.SetText(OUTPUT.Text); // Set the Value of the DataPackage Variable to the Password
